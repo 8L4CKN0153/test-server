@@ -1,0 +1,121 @@
+
+hr {
+	margin: 20px 0;
+	padding: 0;
+	height: 3px;
+	border: none;
+	border-top: 1px solid #ECECEC;
+	border-bottom: 1px solid #ECECEC;
+}
+
+.left { 
+	float: left; 
+	width: 15%;
+}
+
+.right { 
+	float: right;
+	width: 80%; 
+	margin-bottom: 20px;
+} 
+
+p{
+	margin: 0;
+	padding: 0 0 15px 0; 
+}
+
+div{
+	padding: 12px;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 10px 10px;
+	box-shadow: 
+		1px 1px 1px #142D4C30 ;
+	font-size: 12px;
+	color: #385170;
+}
+
+img.main-photo{
+	border-radius: 100%;
+	position: center;
+	max-height: 300px;
+	max-width: 300px;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+  height: 100%;
+  /*padding: 10px;*/
+  font-family: 'Roboto', sans-serif;
+	background-color:#ececec;
+	background-image:  
+		radial-gradient(at 88% 12%, hsla(170,25%,78%,1) 0, transparent 32%),  
+		radial-gradient(at 14% 95%, hsla(166,36%,74%,1) 0, transparent 89%);
+   background-attachment: fixed;
+}
+
+.style1 {
+	margin: 1em;
+	padding: 6px 20px;
+	border-radius: 20px;
+  text-align: center;
+	font-size: 1em;
+	font-style: color="black";
+	/*font-family: 'Montserrat', sans-serif;*/
+	box-shadow:  4px 4px 5px #142D4C20,
+             -4px -4px 5px #ffffff99;
+	background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+		transition: .4s;
+		transition-property: background-color, box-shadow;
+  transition-duration: .4s;
+    }
+		
+.style1:hover{
+		background-color: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+	}
+	
+.style1:active{
+		background-color: none;
+		box-shadow:  -4px -4px 5px #ffffff99 inset,
+             4px 4px 5px #142D4C30 inset;
+		transition-property: background-color, box-shadow;
+  transition-delay: .7s;
+  transition-duration: .4s;
+	}
+	
+	ul {
+  list-style-type: "♥   ";
+}
+    
+.enterText {
+	padding: 6px 20px;
+	border-radius: 10px;
+	background-color: white;
+	border: none;
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+a {
+	color: #385170;
+	text-decoration: none;
+	transition: .2s;
+	
+}
+a:hover{
+	text-shadow: #142D4C 0 0 10px;
+	color: #ECECEC;
+	cursor:pointer;
+}
+
+h1 {
+	color: #385170;
+  /*text-shadow: 2px 2px 1px #142D4C;*/
+}
+
+::selection {
+	 text-shadow: #142D4C 0 0 10px;
+	color: #ECECEC;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- head определяет метаданные страницы: кодировка (ютф-8) и заголовок(HTML5 Document) -->
+
+		<meta charset="utf-8">
+		<title>Minecraft Server 2.0</title>
+		<meta name="author" content="Jaaaaaaaaa">
+		<link rel="stylesheet" href="style/xxx.css"> 
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300,300" rel="stylesheet">
+    <script src="/socket.io/socket.io.js"></script>
+		<script src="js/sendMsg.js" defer></script>
+    <script src="js/editMsg.js" defer></script>
+    <script src="js/saveLog.js" defer></script>
+
+
+	</head>
+
+	<body>
+		<style>
+		body{ font-family: 'Montserrat', sans-serif; }
+		</style>
+		<header>
+			<h1> <b>僕のマインクラフトサーバーへようこそ！</b> </h1>
+		</header>
+		
+		<hr>
+
+	<div class="left">
+		<img src="content/meee.jpg" class="main-photo" alt="me">
+		<p>у меня нет фото только мой автопортрет</p>
+		<p>Этот сайт посвящен лабораторной работе номер 2 по дисциплине Основы веб-разработки НГТУ<br>
+		преподаватель: Цыгулин А.А.<br>
+		Работу выполнила: А**** А.А., ПМИ-91
+		</p>
+		
+		</div>
+		
+	<div class="right">
+		<p>я профессиональный вебдизайнер</p>
+		<p>Цены на мои услуги:
+			<ul>
+			<li> сделать красивую кнопку как эта <span style="color:red"> 10рублей</span> <br>
+				<form action="title.html" target="_blank">
+   					<button class="style1"> титульник </button>
+  				</form>
+			
+			</li>
+				
+			<li> пока что все</li>
+			</ul>
+		</p>
+	</div>
+	
+	<div class="right">
+	<p>Я также профессиональный художник, одна картинка <span style="color:red">300$</span> </p>
+	</div>
+	
+  <div class="right" id="addPost" >
+		<p>Добавить комментарий 
+			<p>Имя: </br><input autofocus  type="text" id="username" class="enterText" size="20" required></p>
+			<p>Комментарий:	</br><textarea id="msgBox" style="resize:none" class="enterText" cols="100" rows="5"></textarea></p>
+		</p>
+
+		<input type="button" class="style1" id="sendButton" value="Отправить">
+		<input type="button" class="style1" id="savelog" value="Сохранить историю сообщений">
+	</div>
+
+
+
+	</body>
+</html>
+
