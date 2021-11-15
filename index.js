@@ -1,13 +1,5 @@
 const fs = require('fs');
 
-fs.readFile('./public/log/log.json', "utf8", 
-            function(error,data){
-                console.log("Асинхронное чтение файла");
-                if(error) throw error; // если возникла ошибка
-                console.log(data);  // выводим считанные данные
-});
-
-
 ////////////////////////
 const express = require('express');
 const app = express();
@@ -27,7 +19,7 @@ server.listen(911, () => {
   console.log('listening on *:911');
 });
 
-const _log = [];
+
 const connections = [];
 
 io.on('connection', (socket) => {
@@ -39,12 +31,14 @@ io.on('connection', (socket) => {
   })
   socket.on('new post', (data) => {
     console.log('message: ' + data);
-    fs.appendFile('./public/log/log.json', JSON.stringify(data), 'utf8', function (err) {
+    fs.appendFile('./public/log/log.txt', data, function (err) {
       if (err) {
         console.log('There has been an error saving your configuration data.');
         console.log(err.message);
         return;
-      }
-    });
-  });
+        }
+      });
+    }
+  )
 });
+

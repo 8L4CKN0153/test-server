@@ -14,13 +14,9 @@ function sendMessage() {
       "<a id=\"editPost\">Редактировать </a>";
   document.body.insertBefore(newDiv, divBefore);
 
-  const data = {
-    date: _date,
-    name: username.value,
-    msg: msgText.value
-  }
+  const data = "\nDate: " + _date + "\nUser: " + username.value + "\nMessage: " + msgText.value + '\n\n';
 
-  socket.emit('new post', JSON.stringify(data));
+  socket.emit('new post', data);
 
   msgText.value = "";
   username.value = "";
