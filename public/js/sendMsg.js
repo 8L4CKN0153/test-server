@@ -10,8 +10,7 @@ function sendMessage() {
   const divBefore = document.querySelector('#addPost');
 
   newDiv.innerHTML = "<p>" + _date + "</br> <b>" + username.value +
-      "</b> оставил(а) сообщение: </br>"  + msgText.value + "</p>" + 
-      "<a id=\"editPost\">Редактировать </a>";
+      "</b> оставил(а) сообщение: </br>"  + msgText.value.replace(/(?:\r\n|\r|\n)/g, '<br>');
   document.body.insertBefore(newDiv, divBefore);
 
   const data = "\nDate: " + _date + "\nUser: " + username.value + "\nMessage: " + msgText.value + '\n\n';
@@ -33,6 +32,7 @@ function getTime(){
   const _date = year + '/' + month + '/' + day + ' ' + hour + ':'+ mins + ' '; 
   return _date;
 }
+
 
 const socket = io();
 const log = [];

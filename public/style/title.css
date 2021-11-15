@@ -1,0 +1,63 @@
+body{
+	width: 40%;
+	height: 100%;
+	border: 2px solid black;
+	font-family: "Times New Roman", Times, serif;
+	
+}
+
+.p1{
+	margin: 2em;
+	margin-bottom: 2em;
+	text-align: center;
+	font-size: 1em;
+}
+
+.p2{
+	padding-top: 20px;
+	text-align: center;
+	font-size: 1.4em;
+}
+
+.p3{
+	padding-top: 5px;
+	text-align: center;
+	font-size: 2em;
+	line-height: 1.5;
+}
+
+.p4{
+	text-align: center;
+	font-size: 1em;
+	margin-top: 15em;
+	position: relative;
+}
+
+img.pic1{
+	margin: 2em;
+	position: relative;
+	float: center;
+	width: 70%;
+	height: auto;
+}
+
+.pic2{
+	position: relative;
+	padding-top: 2.5em;
+	
+	margin-left: 20%;
+}
+
+table{
+		line-height: 1.5;
+		margin-top: -200px;
+		font-size: 1.4em;
+		text-align: left;
+		position: relative;
+		left: 50%;
+}
+
+th{
+	text-align: left;
+	line-height: 2;
+}
