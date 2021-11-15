@@ -1,6 +1,7 @@
 const fs = require('fs');
+////////////////////////////////////////////////////////////////
 
-////////////////////////
+///////////////////////////////////////////////////////////////////
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -15,10 +16,9 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
-server.listen(911, () => {
+server.listen(911, '0.0.0.0', () => {
   console.log('listening on *:911');
 });
-
 
 const connections = [];
 
