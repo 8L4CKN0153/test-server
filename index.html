@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- head определяет метаданные страницы: кодировка (ютф-8) и заголовок(HTML5 Document) -->
+
 		<meta charset="utf-8">
 		<title>Minecraft Server 2.0</title>
 		<meta name="author" content="Jaaaaaaaaa">
 		<link rel="stylesheet" href="style/xxx.css"> 
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300,300" rel="stylesheet">
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
     <script src="/socket.io/socket.io.js"></script>
-		<script src="js/sendMsg.js" defer></script>
+		<script src="js/client.js" defer></script>
+		<!--<script src="../log.js" defer></script>-->
 
 	</head>
 
@@ -24,7 +28,7 @@
 	<div class="left">
 		<img src="content/meee.jpg" class="main-photo" alt="me">
 		<p>у меня нет фото только мой автопортрет</p>
-		<p>Этот сайт посвящен лабораторной работе номер 2 по дисциплине Основы веб-разработки НГТУ<br>
+		<p>Этот сайт посвящен лабораторной работе номер 2 (уже 3) по дисциплине Основы веб-разработки НГТУ<br>
 		преподаватель: Цыгулин А.А.<br>
 		Работу выполнила: А**** А.А., ПМИ-91
 		</p>
@@ -40,9 +44,9 @@
    					<button class="style1"> титульник </button>
   				</form>
 			
-			</li>
-				
+			</li>	
 			<li> пока что все</li>
+			<li>майнкрафт потому что ?????</li>
 			</ul>
 		</p>
 	</div>
@@ -53,15 +57,11 @@
 	
   <div class="right" id="addPost" >
 		<p>Добавить комментарий 
-			<p>Имя: </br><input autofocus  type="text" id="username" class="enterText" size="20" required></p>
-			<p>Комментарий:	</br><textarea id="msgBox" style="resize:none" class="enterText" cols="100" rows="5"></textarea></p>
+			<p>Имя: </br><input autofocus  type="text" id="username" class="enterText" size="20"></p>
+			<p>Комментарий:	</br><textarea id="msgBox" style="resize:none" class="enterText" cols="100" rows="3"></textarea></p>
 		</p>
-
 		<input type="button" class="style1" id="sendButton" value="Отправить">
 	</div>
-
-
-
 	</body>
 </html>
 

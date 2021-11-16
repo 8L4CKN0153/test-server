@@ -34,6 +34,7 @@ io.on('connection', (socket) => {
     console.log('message: ' + data.msg);
     io.emit('post', data);
     }
+    
   )
 });
 
