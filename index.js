@@ -9,7 +9,6 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
@@ -24,20 +23,16 @@ const connections = [];
 
 io.on('connection', (socket) => {
   connections.push(socket);
-  console.log("new connection");
-  socket.on('disconnect', (data) => {
+  console.log('new connection: ' + socket.handshake.address +' '+ socket.id);
+  
+  socket.on('disconnect', () => {
     connections.splice(connections.indexOf(socket), 1);
-    console.log('disconnected');
+    console.log(socket.handshake.address + socket.id +' disconnected');
   })
+
   socket.on('new post', (data) => {
-    console.log('message: ' + data);
-    fs.appendFile('./public/log/log.txt', data, function (err) {
-      if (err) {
-        console.log('There has been an error saving your configuration data.');
-        console.log(err.message);
-        return;
-        }
-      });
+    console.log('message: ' + data.msg);
+    io.emit('post', data);
     }
   )
 });
