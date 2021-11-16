@@ -8,10 +8,9 @@
 		<meta name="author" content="Jaaaaaaaaa">
 		<link rel="stylesheet" href="style/xxx.css"> 
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300,300" rel="stylesheet">
-		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-		<script src="js/client.js" defer></script>
-		<!--<script src="../log.js" defer></script>-->
+		<script src="js/client.js"></script>
 
 	</head>
 
@@ -19,6 +18,7 @@
 		<style>
 		body{ font-family: 'Montserrat', sans-serif; }
 		</style>
+
 		<header>
 			<h1> <b>僕のマインクラフトサーバーへようこそ！</b> </h1>
 		</header>
@@ -26,15 +26,24 @@
 		<hr>
 
 	<div class="left">
-		<img src="content/meee.jpg" class="main-photo" alt="me">
+		<img src="content/meee.jpg" class="main-photo" style="padding-bottom: 2em;" alt="me">
 		<p>у меня нет фото только мой автопортрет</p>
-		<p>Этот сайт посвящен лабораторной работе номер 2 (уже 3) по дисциплине Основы веб-разработки НГТУ<br>
+		<!--<p>Этот сайт посвящен лабораторной работе номер 2 (уже 3) по дисциплине Основы веб-разработки НГТУ<br>
 		преподаватель: Цыгулин А.А.<br>
 		Работу выполнила: А**** А.А., ПМИ-91
-		</p>
+		</p>-->
+		
 		
 		</div>
 		
+	<div class="right">
+		<h3>МОЙ СЕРВЕР <br>
+		правила: <br>1. НЕ ПИСАТЬ НИЧЕГО НЕПРИЛИЧНОГО<br>
+			2. НАЦУФУЮ И БАДЖИМОРИ КАНОН
+	</h3>
+	</div>	
+
+
 	<div class="right">
 		<p>я профессиональный вебдизайнер</p>
 		<p>Цены на мои услуги:
@@ -55,6 +64,9 @@
 	<p>Я также профессиональный художник, одна картинка <span style="color:red">300$</span> </p>
 	</div>
 	
+	<form id="comments"></form>
+
+
   <div class="right" id="addPost" >
 		<p>Добавить комментарий 
 			<p>Имя: </br><input autofocus  type="text" id="username" class="enterText" size="20"></p>

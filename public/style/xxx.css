@@ -110,7 +110,7 @@ a:hover{
 	cursor:pointer;
 }
 
-h1 {
+h1, h2, h3, h4, h5 {
 	color: #385170;
   /*text-shadow: 2px 2px 1px #142D4C;*/
 }

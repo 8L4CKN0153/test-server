@@ -10,14 +10,15 @@ function getTime(){
   return _date;
 }
 
-//$(function() {
+$(function() {
   const socket = io();
-
-  const sendBtn = document.querySelector('#sendButton');
-  const $msgText = document.querySelector('#msgBox');
-  const $username = document.querySelector('#username');
+  const sendBtn = $('#sendButton').get(0);
+  const $msgText = $('#msgBox').get(0);
+  const $username = $('#username').get(0);
   let date = undefined;
   let username = undefined;
+  const sound = new Audio('../content/sound.mp3');
+  sound.volume = 0.6;
 
   sendBtn.onclick = ((e) =>{
     e.preventDefault();
@@ -39,14 +40,16 @@ function getTime(){
   });
 
   socket.on('post', (data) => {
+    sound.play();
     console.log(JSON.stringify(data));
-    const addpost = document.querySelector('#addPost')
+    const addpost = $('#addPost').get(0);
     const newDiv = document.createElement('div');
     newDiv.className = 'right';
 
     newDiv.innerHTML = "<p>" + data.date + "</br> <b>" + data.user +
       "</b> оставил(а) сообщение: </br>"  + data.msg.replace(/(?:\r\n|\r|\n)/g, '<br>');
     document.body.insertBefore(newDiv, addpost);
+    
   });
-//})
+})
 

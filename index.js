@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
   
   socket.on('disconnect', () => {
     connections.splice(connections.indexOf(socket), 1);
-    console.log(socket.handshake.address + socket.id +' disconnected');
+    console.log(socket.handshake.address + ' disconnected');
   })
 
   socket.on('new post', (data) => {
