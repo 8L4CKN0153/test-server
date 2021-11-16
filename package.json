@@ -1,8 +1,5 @@
 {
   "name": "minecraft",
   "version": "0.0.1",
-  "description": "thithis",
-  "dependencies": {
-    "nodemon": "^2.0.15"
-  }
+  "description": "thithis"
 }

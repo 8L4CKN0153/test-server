@@ -15,8 +15,11 @@ $(function() {
   const sendBtn = $('#sendButton').get(0);
   const $msgText = $('#msgBox').get(0);
   const $username = $('#username').get(0);
-  let date = undefined;
-  let username = undefined;
+  const $addPost = $('#addPost').get(0);
+  
+  let date = '';
+  let username = '';
+
   const sound = new Audio('../content/sound.mp3');
   sound.volume = 0.6;
 
@@ -42,14 +45,25 @@ $(function() {
   socket.on('post', (data) => {
     sound.play();
     console.log(JSON.stringify(data));
-    const addpost = $('#addPost').get(0);
     const newDiv = document.createElement('div');
     newDiv.className = 'right';
 
     newDiv.innerHTML = "<p>" + data.date + "</br> <b>" + data.user +
       "</b> оставил(а) сообщение: </br>"  + data.msg.replace(/(?:\r\n|\r|\n)/g, '<br>');
     document.body.insertBefore(newDiv, addpost);
+    });
     
+
+  socket.on('load log', (data) => {
+    console.log(data);
+    for(var i = 0; i < data.length; i++){
+      const newDiv = document.createElement('div');
+      newDiv.className = 'right';
+
+      newDiv.innerHTML = "<p>" + data.date + "</br> <b>" + data.user +
+       "</b> оставил(а) сообщение: </br>"  + data.msg.replace(/(?:\r\n|\r|\n)/g, '<br>');
+      document.body.insertBefore(newDiv, addpost);
+    }
   });
 })
 
