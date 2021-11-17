@@ -14,9 +14,6 @@ const { json } = require('express');
 const fileContent = fs.readFileSync('log.json', 'utf8');
 var _log = JSON.parse(fileContent);
 
-console.log(_log.posts[0]);
-console.log(_log.posts[1]);
-
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
