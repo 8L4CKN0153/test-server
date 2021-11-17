@@ -6,13 +6,14 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-//=================================
-//        чтение данных
-//=================================
+//чтение данных
 const fs = require('fs');
 const { json } = require('express');
 const fileContent = fs.readFileSync('log.json', 'utf8');
-var _log = JSON.parse(fileContent);
+if (fileContent !== ""){
+  var _log = JSON.parse(fileContent);
+}
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -29,7 +30,9 @@ const connections = [];
 io.on('connection', (socket) => {
   connections.push(socket);
   console.log('new connection: ' + socket.handshake.address);
-  socket.emit('load log', _log);
+  if (_log !== null) {
+    socket.emit('load log', _log);
+  }
   
   socket.on('disconnect', () => {
     connections.splice(connections.indexOf(socket), 1);
@@ -40,8 +43,6 @@ io.on('connection', (socket) => {
     console.log(data.user + ': ' + data.msg);
     io.emit('post', data);
     _log.posts.push(data);
-    fs.writeFile('log.json', JSON.stringify(_log), () => {
-      console.log('changes saved');
-    });
+    fs.writeFile('log.json', JSON.stringify(_log), () => {});
     });
 });
