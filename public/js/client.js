@@ -50,20 +50,22 @@ $(function() {
 
     newDiv.innerHTML = "<p>" + data.date + "</br> <b>" + data.user +
       "</b> оставил(а) сообщение: </br>"  + data.msg.replace(/(?:\r\n|\r|\n)/g, '<br>');
-    document.body.insertBefore(newDiv, addpost);
+    document.body.insertBefore(newDiv, $addPost);
     });
     
 
-  socket.on('load log', (data) => {
-    console.log(data);
-    for(var i = 0; i < data.length; i++){
+  socket.on('load log', (log) => {
+    console.log(log.posts);
+    console.log(log.posts[0]);
+    console.log(log.posts[1]);
+
+    for(var i=0; i < log.posts.length; i++){
       const newDiv = document.createElement('div');
       newDiv.className = 'right';
 
-      newDiv.innerHTML = "<p>" + data.date + "</br> <b>" + data.user +
-       "</b> оставил(а) сообщение: </br>"  + data.msg.replace(/(?:\r\n|\r|\n)/g, '<br>');
-      document.body.insertBefore(newDiv, addpost);
+      newDiv.innerHTML = "<p>" + log.posts[i].date + "</br> <b>" + log.posts[i].user +
+       "</b> оставил(а) сообщение: </br>" + log.posts[i].msg.replace(/(?:\r\n|\r|\n)/g, '<br>');
+      document.body.insertBefore(newDiv, $addPost);
     }
   });
 })
-

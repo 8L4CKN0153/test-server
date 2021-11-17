@@ -1,14 +1,1 @@
-{
-  "messages": [
-    {
-      "user" : "hi",
-      "msg" : "hiiii",
-      "date" : "today"
-    },
-    {
-      "user" : "sasa",
-      "msg" : "ssss",
-      "date" : "yeaterday"
-    }
-  ]
-}
+{"posts":[{"user":"hi","msg":"hiiii","date":"today"},{"user":"sasa","msg":"ssss","date":"yeaterday"},{"user":"r","msg":"ggggg","date":"2021/11/17 14:46 "},{"user":"r","msg":"rfr ltf как дела","date":"2021/11/17 14:46 "},{"user":"имя","msg":"норм","date":"2021/11/17 14:46 "}]}

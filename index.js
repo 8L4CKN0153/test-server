@@ -1,8 +1,4 @@
 
-//=================================
-//        далее сокеты и тд  
-//=================================
-
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -14,10 +10,12 @@ const io = new Server(server);
 //        чтение данных
 //=================================
 const fs = require('fs');
-
+const { json } = require('express');
 const fileContent = fs.readFileSync('log.json', 'utf8');
-const _log = JSON.parse(fileContent);
-console.log(_log);
+var _log = JSON.parse(fileContent);
+
+console.log(_log.posts[0]);
+console.log(_log.posts[1]);
 
 app.use(express.static(__dirname + '/public'));
 
@@ -42,10 +40,11 @@ io.on('connection', (socket) => {
   });
 
   socket.on('new post', (data) => {
-    console.log('\'' + data.user + ': ' + data.msg);
+    console.log(data.user + ': ' + data.msg);
     io.emit('post', data);
-    //_log.push(data);
-    fs.writeFileSync('log.json', JSON.stringify(_log));
+    _log.posts.push(data);
+    fs.writeFile('log.json', JSON.stringify(_log), () => {
+      console.log('changes saved');
+    });
     });
 });
-
